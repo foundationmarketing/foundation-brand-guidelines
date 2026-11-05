@@ -6,12 +6,15 @@
 <title>Foundation Brand Guidelines</title>
 <meta name="description" content="The official Foundation brand guide: approved logos, colors, typography, illustrations and deck templates.">
 <meta name="theme-color" content="#F4F2EC">
-<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Fjalla+One&amp;family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="styles.css?v=23">
-<script src="app.js?v=9" defer></script>
+<link rel="stylesheet" href="styles.css?v=24">
+<script src="app.js?v=11" defer></script>
 </head>
 <body>
 
@@ -40,8 +43,12 @@
   <aside class="sidebar">
     <div class="sidebar-brand">
       <a href="#top" aria-label="Foundation brand guidelines, top of page"><img src="assets/logos/wordmark-dark.png" alt="Foundation" width="137" height="22"></a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="ic ic-menu-open" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.6" fill="currentColor" stroke="none"/></svg>
+        <svg class="ic ic-menu-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
     </div>
-    <nav class="nav" aria-label="Brand guidelines">
+    <nav class="nav" id="site-nav" aria-label="Brand guidelines">
       <a class="nav-item" href="#top" data-spy="top"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg>Overview</a>
 
       <span class="nav-label">Visual identity</span>

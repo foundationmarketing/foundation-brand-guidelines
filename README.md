@@ -8,6 +8,7 @@ No build step:
 - `styles.css`: colors, type and components
 - `app.js`: highlights the sidebar link for the section in view, switches the example prompt tabs and runs the Copy buttons
 - `assets/`: logos, illustration SVGs and typography examples, all taken from the live site (the large SVG previews were converted to WebP)
+- `favicon.ico`, `assets/favicon-32.png`, `assets/icon-192.png`, `assets/apple-touch-icon.png`: browser and home-screen icons, made from the light brandmark on navy
 
 ## Run locally
 

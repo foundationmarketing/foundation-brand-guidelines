@@ -111,4 +111,44 @@
       }
     });
   });
+
+  // ---------- Mobile menu (kebab button) ----------
+  var sidebar = document.querySelector(".sidebar");
+  var menuBtn = document.querySelector(".menu-btn");
+  if (sidebar && menuBtn) {
+    var setMenu = function (open) {
+      sidebar.classList.toggle("is-open", open);
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    menuBtn.addEventListener("click", function () {
+      setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
+    });
+    // Choosing a section, pressing Escape or tapping outside closes it.
+    // From the open menu, close it first, then jump to the section ourselves:
+    // closing the menu mid-tap can cancel the browser's own jump.
+    document.querySelectorAll(".nav a").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var wasOpen = sidebar.classList.contains("is-open");
+        setMenu(false);
+        var href = a.getAttribute("href") || "";
+        var target = href.charAt(0) === "#" ? document.getElementById(href.slice(1)) : null;
+        if (!wasOpen || !target) return;
+        e.preventDefault();
+        window.requestAnimationFrame(function () {
+          target.scrollIntoView({ behavior: "instant", block: "start" });
+          if (history.pushState) history.pushState(null, "", href);
+        });
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && sidebar.classList.contains("is-open")) { setMenu(false); menuBtn.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (sidebar.classList.contains("is-open") && !sidebar.contains(e.target)) setMenu(false);
+    });
+    window.matchMedia("(min-width: 840px)").addEventListener("change", function (mq) {
+      if (mq.matches) setMenu(false);
+    });
+  }
 })();
