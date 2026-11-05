@@ -133,7 +133,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 
 .eyebrow {
   font-family: var(--font-ui); font-weight: 800;
-  font-size: 19px; letter-spacing: 0.06em; text-transform: uppercase;
+  font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--coral);
 }
 .title {
@@ -148,7 +148,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
   color: var(--navy);
 }
 .h3 { font-family: var(--font-ui); font-weight: 800; font-size: 24px; line-height: 1.2; color: var(--navy); }
-.accent { color: var(--coral); }
 .lede { max-width: 680px; font-size: 19px; line-height: 1.5; color: var(--ink-muted); }
 
 .label {
@@ -302,6 +301,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-
 
 .prompt { background: var(--navy); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
 .prompt-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.prompt-head .eyebrow { font-size: 19px; letter-spacing: 0.06em; } /* box label on navy: keep large for contrast */
 .prompt-tag { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-navy-muted); }
 .prompt-text {
   padding: 20px; border-radius: 8px; background: var(--ink);
